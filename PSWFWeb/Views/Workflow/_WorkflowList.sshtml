@@ -1,0 +1,9 @@
+﻿<div class="pure-u-1" id="list">
+    @Each.WorkflowList
+    <div class="listentry">
+        <h4 class="listentry-title">
+          <a href="/workflow/detail/@!Current">@!Current</a>
+        </h4>
+    </div>
+    @EndEach
+</div>

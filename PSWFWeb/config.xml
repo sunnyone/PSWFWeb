@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PSWFWebConfig>
+  <Uri>http://127.0.0.1:3579</Uri>
+  <WorkflowScriptsDirectory>.\workflows</WorkflowScriptsDirectory>
+  <Username>powershell</Username>
+  <!-- default password is 'powershell'. Generate your one with the option: /password PASSWORD. -->
+  <PasswordHash>86F51B17077AEE2D7885528286A00AA632489CFEE188CC99FBEC881FEB06DCA7</PasswordHash>
+</PSWFWebConfig>

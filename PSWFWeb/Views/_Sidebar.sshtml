@@ -1,0 +1,15 @@
+﻿<div class="pure-u" id="nav">
+    <a href="#" class="nav-menu-button">Menu</a>
+
+    <div class="nav-inner">
+        <div class="pure-menu pure-menu-open">
+            <ul>
+                <li class="pure-menu-heading">Workflows</li>
+                <li><a href="@Path['~/workflow']">List</a></li>
+
+                <li class="pure-menu-heading">Jobs</li>
+                <li><a href="@Path['~/job']">List</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

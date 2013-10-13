@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Workflows - PSWFWeb</title>
+    <link rel="stylesheet" href="@Path['~/Content/css/pure-min.css']">
+    <link rel="stylesheet" href="@Path['~/Content/css/PSWFWeb.css']">
+
+	<style type="text/css">
+		form { display: inline }
+	</style>
+</head>
+
+<body>
+    <div class="pure-g-r content" id="layout">
+        @Partial['_Sidebar']
+        @Partial['_WorkflowList']
+
+        <div class="pure-u-1" id="main">
+            <div class="entry-content">
+                <div class="entry-content-header pure-g">
+                    <div class="pure-u-1-2">
+                        <h1 class="entry-content-title">@!Model.CurrentWorkflowName</h1>
+                        <p class="entry-content-subtitle"></p>
+                    </div>
+
+                    <div class="pure-u-1-2 entry-content-controls">
+						<form method="post" action="@Path['~/workflow/start/@!Model.CurrentWorkflowName']"><input type="submit" class="pure-button secondary-button" value="Start" /></form>
+                    </div>
+                </div>
+
+                <div class="entry-content-body">
+					@If.IsCurrentWorkflowStarted
+						<pre>@Model.CurrentWorkflowStartResult</pre>
+					@EndIf
+                </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<div class="pure-u-1" id="list">
+  @Each.JobList
+  <div class="listentry listentry-selected">
+    <h5 class="listentry-subtitle">
+      <a href="@Path['~/job/detail/@!Current.Name']">@!Current.Name</a>
+    </h5>
+    <h4 class="listentry-title">@!Current.Command</h4>
+    <p class="listentry-desc">@!Current.State</p>
+  </div>
+  @EndEach
+</div>

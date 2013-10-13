@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Jobs - PSWFWeb</title>
+    <link rel="stylesheet" href="@Path['~/Content/css/pure-min.css']" />
+    <link rel="stylesheet" href="@Path['~/Content/css/PSWFWeb.css']" />
+
+	<style type="text/css">
+		form { display: inline }
+	</style>
+</head>
+
+<body>
+    <div class="pure-g-r content" id="layout">
+	@Partial['_Sidebar']
+    @Partial['_JobList']
+
+        <div class="pure-u-1" id="main">
+			<div class="entry-content">
+                <div class="entry-content-header pure-g">
+                    <div class="pure-u-1-2">
+                        <h1 class="entry-content-title">@!Model.CurrentJob.Command</h1>
+                        <p class="entry-content-subtitle">
+                            @!Model.CurrentJob.State
+                        </p>
+                    </div>
+
+                    <div class="pure-u-1-2 entry-content-controls">
+						<form method="post" action="@Path['~/job/suspend/@!Model.CurrentJob.Name']"><input type="submit" class="pure-button secondary-button" value="Suspend" /></form>
+						<form method="post" action="@Path['~/job/resume/@!Model.CurrentJob.Name']"><input type="submit" class="pure-button secondary-button" value="Resume" /></form>
+						<form method="post" action="@Path['~/job/stop/@!Model.CurrentJob.Name']"><input type="submit" class="pure-button secondary-button" value="Stop" /></form>
+						<form method="post" action="@Path['~/job/remove/@!Model.CurrentJob.Name']"><input type="submit" class="pure-button secondary-button" value="Remove" /></form>
+                    </div>
+                </div>
+
+                <div class="entry-content-body">
+					<pre>@!Model.Output</pre>
+                </div>
+            </div>
+		</div>
+	</div>		
+</body>
+</html>
